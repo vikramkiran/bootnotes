@@ -1,0 +1,75 @@
+
+
+Spring Boot :
+-------------
+
+    Dependencies:
+	-------------
+	
+	  -> Spring boot starter actuator dependency--->to monitor and manage your application.
+	  ->Spring boot starter Security dependency---> used for spring security.
+	  ->Spring boot starter thymeleaf dependency--->to create web applications.
+	  ->Spring boot starter test dependency--->for writing testing cases.
+	  ->Spring boot starter web dependency--->for restful web services
+	  
+	  
+
+Annotations :
+-------------
+	  
+      @RestController->defines restful web services.It serves JSON,XML & Custom Responses.
+      @RequestMapping->defines the request uri to access the rest endpoint.we can define request() to consume and produce object.default one is GET.
+      @ResponseBody->defines the response body content type.
+      @Pathvariable->defines the custom/dynamic request by using {}.
+      @RequestParameter->to read the request parameter from the request url,we can also set the default value.
+      @GetMapping->for retrieving purpose.
+      @PostMapping->for creating new resource.
+      @PutMapping->for updating the resource.
+      @DeleteMapping->for deleting purpose.
+
+
+Exceptionhandling:
+------------------
+
+      @ExceptionHandler->to handle the specific exceptions & sending the custom responses to the client.
+      @ControllerAdvice->to handle exceptions globally.
+
+Interceptor:
+-----------
+
+    ->Before sending the request to the controller and before sending the response to the clinet it works.
+    ->for this we have HandlerInterceptor(I)->
+     
+     @Component
+     public class Test implements HandlerInterceptor{
+	 
+	 
+	          preHandle()->Before sending the request
+              postHandle()->before sending the response to the client
+              afterCompletion()->after completing the request & response.			  
+	 
+	 }	
+
+
+Interceptor & ServletInitializer almost similar.	 
+------------------------------------------------
+
+
+RestTemplate:
+-----------
+ 
+  ->used to create applications that consume the web services.we can use the exchange() to consume the web services for all HTTP Methods.
+   
+   
+FileHandling:
+-------------
+
+    ->FileUpload->for uploading a file we can use MultiPartFile as a request parameter.
+    ->FileDownloading->for downloading the file we can use InputStreamresourcer and we need to set the HttpHeader for the Content Disposition.
+
+
+
+@Service,@Repository,@Component,
+
+server.port=0->randomly it takes some port number and runs.	
+  
